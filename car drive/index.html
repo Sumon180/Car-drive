@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Running</title>
+</head>
+<body>
+
+
+
+
+    <button id="startbtn">Start</button>
+    <button id="stopbtn">Stop</button><br><br>
+    <div class="img">
+        <hr>
+        <img src="images.jpg" id="carimg" alt="" width="220" height="220">
+        <hr>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        let img = document.getElementById('carimg');
+        let startbtn = document.getElementById('startbtn');
+        let stopbtn = document.getElementById('stopbtn');
+        let carstart;
+        
+        let m = 0;
+       
+
+        startbtn.addEventListener('click',() => {
+            carstart = setInterval(() => {
+                        if(m === 800){
+                        clearInterval(carstart);
+                        m = 0;
+
+                    }
+                    else{
+                        m += 2;
+                        img.style.marginLeft = m +"px";
+                    }
+                },20);
+
+                
+        });
+
+        stopbtn.addEventListener('click',() => {
+            
+                clearInterval(carstart);         
+                
+        });
+
+    </script>
+    
+</body>
+</html>
